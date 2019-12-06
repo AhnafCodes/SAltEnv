@@ -8,7 +8,7 @@ Note: heresy and sass are my personal preferences, you can replace them with you
 You might not really need webpack bundling or babel transpile or all those other steps. If you are on some traditional frontend stack/setup redo-ing all that stuff in React or Angular or Vue echo system might not be the right thing. It might be extremely costly and painful too. You may be already taking care of all those and more(like routing, session management) in your current django, spring/java(God forbid JCR/@EM), php and/or mvc framework. All that is production(i.e. battle) tested and you sure would move to Http2, be InternetExplorer-free and hopefully embrace ES-modules. You surely don't need two seperate dev-environments, constantly pluging some bundle.js or main.js into your current system.  So, Why not? 
 
 ### Why heresy?
-The post, [Why I don't use web components] (https://dev.to/richharris/why-i-don-t-use-web-components-2cia) raises some real concerns about the state of custom webcomponents. I think [heresy](https://github.com/WebReflection/heresy)  does answer those concerns and perhaps in better ways than other solutions(like it's handling of CSS).
+The post, [Why I don't use web components](https://dev.to/richharris/why-i-don-t-use-web-components-2cia) raises some real concerns about the state of custom webcomponents. I think [heresy](https://github.com/WebReflection/heresy)  does answer those concerns and perhaps in better ways than other solutions(like it's handling of CSS).
 
 ## How?:
 You will have to make changes to package.json based on your current project and frameworks directory structure and scaffolding 
