@@ -1,6 +1,6 @@
 # WebComponentEnv
 ## What?:
-A minimal setup for web development using [web components](https://www.webcomponents.org/introduction), [heresy](https://github.com/WebReflection/heresy) ,sass and [@pika/web](https://github.com/pikapkg/web)(simple and frameless and no transpilation and no bundling and no IE and yes ES modules)
+A minimal setup for web development using [web components](https://www.webcomponents.org/introduction), [heresy](https://github.com/WebReflection/heresy) ,sass and [@pika/web](https://github.com/pikapkg/web) (simple and frameless and no transpilation and no bundling and no IE and yes ES modules)
 
 Note: heresy and sass are my personal preferences, you can replace them with yours.
 
