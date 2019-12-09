@@ -4,10 +4,10 @@
   "description": "A minimal setup for web development using web components, heresy ,sass and pika(simple and frameless and no transpilation or no bundling or yes ES modules)",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build-css & es-dev-server --watch --open --host 127.0.0.1 --port 9000",
+    "start": "npm run build-css & npm run format & es-dev-server --watch --open --host 127.0.0.1 --port 9000",
     "postinstall": "npx @pika/web",
     "lint": "eslint \"src/**/*.{js}\" --quiet",
-    "format": "prettier \"src/**/*.{js,scss,html}\" --write",
+    "format": "prettier --write \"src/**/*.{js,scss,html}\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-css": "node-sass src -o src  -iw"
   },

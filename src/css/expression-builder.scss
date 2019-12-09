@@ -1,28 +1,26 @@
 @mixin filter-composer() {
-     min-height: 40px;
-     margin: 20px;
-     clear: both;
-  }
-
+  min-height: 40px;
+  margin: 20px;
+  clear: both;
+}
 
 div[is="filter-composer"] {
-    @include filter-composer();
-    
-    border-left: 0.25rem solid #333333;
-    background: #999999;
+  @include filter-composer();
+
+  border-left: 0.25rem solid #333333;
+  background: #999999;
 }
 
 div[is="filter-composer"].odd {
-    @include filter-composer();
-    background: #ffffff;
-    border-left: 0.25rem solid #666666;
+  @include filter-composer();
+  background: #ffffff;
+  border-left: 0.25rem solid #666666;
 }
 
-
-.drag-item{
-    display: inline-block;
-    margin-left: 5px;
-    border: #333333 2px solid;
-    border-radius: 5px;
-    width: 20px;
+.drag-item {
+  display: inline-block;
+  margin-left: 5px;
+  border: #333333 2px solid;
+  border-radius: 5px;
+  width: 20px;
 }
