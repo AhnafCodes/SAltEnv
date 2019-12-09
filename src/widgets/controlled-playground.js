@@ -19,7 +19,6 @@ const getNextAllowedColors = {
   }
 };
 
-
 class ControlledPlayground extends HTMLDivElement {
   constructor() {
     super();
@@ -33,7 +32,8 @@ class ControlledPlayground extends HTMLDivElement {
   }
 
   oninit() {
-    if (this.setState == undefined) { //this part can go in set props if you are deducing state from props
+    if (this.setState == undefined) {
+      //this part can go in set props if you are deducing state from props
       const initialState = {
         controlsState: { red: true, yellow: true, green: false },
         play: "green"
@@ -42,7 +42,11 @@ class ControlledPlayground extends HTMLDivElement {
     }
     this.addEventListener("click", e => {
       const target = e.target;
-      if (target.parentElement.isSameNode(this.refs.controls.current)) {
+      if (
+        target &&
+        target.parentElement &&
+        target.parentElement.isSameNode(this.refs.controls.current)
+      ) {
         changeColor(target.className);
       }
     });
