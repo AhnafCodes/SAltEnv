@@ -22,8 +22,8 @@
   "license": "ISC",
   "dependencies": {
     "classnames-es": "^2.2.6",
-    "heresy": "^0.24.1",
-    "lighterhtml": "^2.0.7"
+    "heresy": "^0.24.2",
+    "lighterhtml": "^2.0.8"
   },
   "devDependencies": {
     "@pika/web": "^0.6.1",
