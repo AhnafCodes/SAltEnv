@@ -49,6 +49,6 @@ alphabetContainer.addEventListener("dragstart", dragstart_handler);
 render(
   document.getElementById("playground"),
   html`
-    <FilterComposer props=${{}} />
+    <FilterComposer props=${{ showExpression: true }} />
   `
 );

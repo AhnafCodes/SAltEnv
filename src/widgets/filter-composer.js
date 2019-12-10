@@ -14,6 +14,17 @@ const getFragment = value => {
     <span class=${value}>${value}</span>
   `;
 };
+const addOfType = {
+        and: html`
+    <span class="and"> AND </span>
+  `,
+        or: html`
+    <span class="or"> OR </span>
+  `,
+        not: html`
+    <span class="not"> NOT </span>
+  `
+};
 const getValueFragment = value => {
   return html`
     <div class="letter">( <span class=${value}>${value}</span> )</div>
@@ -64,8 +75,12 @@ class FilterComposer extends HTMLDivElement {
       const { and, or, group, not, value } = nextAllowedExpressionElements[
         elementTypeName
       ];
+      let  expression_element = elementTypeName;
+      if(elementTypeName ==="group") {
+         expression_element = { ref: ref()}
+      }
       this.setState({
-        expressionState: [...this.getState().expressionState, elementTypeName],
+        expressionState: [...this.getState().expressionState, expression_element],
         controlsState: { and, or, group, not },
         isValueAllowedExpression: value
       });
@@ -105,8 +120,10 @@ class FilterComposer extends HTMLDivElement {
   set props(props) {
     this._props = props || {};
     this.props.isOdd = this.props.isOdd || false;
-    if(this.setState == undefined){ //
-      this.setState = (newState, callback) => {
+    const stateChangeCallback = this.props.stateChangeCallback || false;
+    if (this.setState == undefined) {
+      //
+      this.setState = (newState, callback=stateChangeCallback) => {
         State = { ...State, ...newState };
         return (() => {
           if (callback) {
@@ -126,7 +143,6 @@ class FilterComposer extends HTMLDivElement {
       expressionState: [],
       isValueAllowedExpression: true
     };
-
   }
 
   get props() {
@@ -134,16 +150,14 @@ class FilterComposer extends HTMLDivElement {
   }
 
   renderExpression() {
-    const expressionState = this.getState().expressionState;
+    const { expressionState } = this.getState();
     return expressionState.map(expressionElement => {
-      const addOfType = {
-        and: getFragment("and"),
-        or: getFragment("or"),
-        group: html`
-          <FilterComposer props=${{ isOdd: !this.props.isOdd }} />
-        `,
-        not: getFragment("not")
-      };
+      if(typeof expressionElement == "object"){
+        return  html`
+          <FilterComposer ref=${expressionElement.ref} props=${{ isOdd: !this.props.isOdd }} />
+        `;
+      }
+
       return (
         addOfType[expressionElement] || getValueFragment(expressionElement)
       );
@@ -159,20 +173,30 @@ class FilterComposer extends HTMLDivElement {
     );
     return controlsList;
   }
-
+  getExpression(){
+    const {expressionState} = this.getState();
+    return expressionState.map(expressionElement => {
+      if(typeof expressionElement == "object"){
+        return  expressionElement.ref.current.getExpression();
+      }
+      return expressionElement
+    });
+  }
   render() {
-    const { classNames = "" } = this.props;
+    const { classNames = "", showExperession = false } = this.props;
     this.setAttribute(
       "class",
       classnames([classNames, "filter-composer", { odd: this.props.isOdd }])
     );
+    const expression = showExperession ? html`<div>${JSON.stringify(2,2, this.getExpression())}</div>`:"";
+
 
     this.html`<div class="controls" ref=${this.refs.controls}>
                       ${this.renderControls()} 
                   </div>
                   <div class="playground" ref=${this.refs.playground} >
                       ${this.renderExpression()}
-                  </div>`;
+                  </div>${expression}`;
   }
 }
 
