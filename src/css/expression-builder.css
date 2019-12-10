@@ -12,6 +12,11 @@ div[is="filter-composer"].odd {
   background: #ffffff;
   border-left: 0.25rem solid #666666; }
 
+div[is="filter-composer"] .expression {
+  clear: both;
+  float: left;
+  margin-top: 20px; }
+
 .drag-item {
   display: inline-block;
   margin-left: 5px;

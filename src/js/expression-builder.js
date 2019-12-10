@@ -46,9 +46,12 @@ render(
   `
 );
 alphabetContainer.addEventListener("dragstart", dragstart_handler);
+
+const renderExpression = () => render(document.getElementById("expression"), html`${JSON.stringify(document.getElementById("expression-builder").getExpression(), 2,2)}`)
 render(
   document.getElementById("playground"),
   html`
-    <FilterComposer props=${{ showExpression: true }} />
+    <FilterComposer id="expression-builder" props=${{ showExpression: true,  stateChangeCallback:renderExpression}} />
   `
 );
+
