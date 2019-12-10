@@ -1,4 +1,4 @@
-# WebComponentEnv
+# SAltEnv -Simple Alternative Env
 ## What?:
 A minimal setup for web development using [web components](https://www.webcomponents.org/introduction), [heresy](https://github.com/WebReflection/heresy) ,sass and [@pika/web](https://github.com/pikapkg/web) (simple and frameless and no transpilation and no bundling and no IE and yes ES modules)
 
@@ -30,4 +30,9 @@ Like in "django" you might changes this package.json->"scripts" to somthing like
   ```
 You will need to change "scripts"->"postinstall" based on where you want to save webmodules(compiled yes-modules). You can then import those modules into your component's django templates, statitc js files or other js compomonents.
 
-Note: you really don't need to run or have "es-dev-server" unless for running some statics in isolation in development/test. Just doing "npm run build-css & npm run format ...." based on your project needs might suffice.   
+Note: 
+- you really don't need to run or have "es-dev-server" unless for running some statics in isolation in development/test. Just doing "npm run build-css & npm run format ...." based on your project needs might suffice. 
+- As suggested by [heresy](https://github.com/WebReflection/heresy), for wider compatiblity add this for polyfill
+```
+<script>if(this.customElements)try{customElements.define('built-in',document.createElement('p').constructor,{'extends':'p'})}catch(a){document.write('<script src="//unpkg.com/@ungap/custom-elements-builtin"><'+'/script>')}else document.write('<script src="//unpkg.com/document-register-element"><'+'/script>');</script>
+```
