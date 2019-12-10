@@ -1,6 +1,6 @@
 {
   "name": "WebComponentEnv",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A minimal setup for web development using web components, heresy ,sass and pika(simple and frameless and no transpilation or no bundling or yes ES modules)",
   "main": "index.js",
   "scripts": {
