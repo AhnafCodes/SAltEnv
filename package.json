@@ -1,7 +1,7 @@
 {
-  "name": "WebComponentEnv",
+  "name": "SAltEnv",
   "version": "0.1.0",
-  "description": "A minimal setup for web development using web components, heresy ,sass and pika(simple and frameless and no transpilation or no bundling or yes ES modules)",
+  "description": "SAltEnv - Simple Alternative Environment, a minimal setup for web development using web components, heresy ,sass and pika(simple and frameless and no transpilation and no bundling and yes ES modules)",
   "main": "index.js",
   "scripts": {
     "start": "npm run build-css & npm run format & es-dev-server --watch --open --host 127.0.0.1 --port 9000",
