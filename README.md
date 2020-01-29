@@ -30,7 +30,7 @@ Like in "django" you might changes this package.json->"scripts" to somthing like
   ```
 You will need to change "scripts"->"postinstall" based on where you want to save webmodules(compiled yes-modules). You can then import those modules into your component's django templates, statitc js files or other js compomonents.
 
-And also may like use [Terser](https://github.com/terser/terser) & [CSSNano](https://cssnano.co/) for optimization before Production. 
+And also may like use [Terser](https://github.com/terser/terser) & [CSSNano](https://cssnano.co/) for optimizations before Production. 
 
 Note: 
 - you really don't need to run or have "es-dev-server" unless for running some statics in isolation in development/test. Just doing "npm run build-css & npm run format ...." based on your project needs might suffice. 
