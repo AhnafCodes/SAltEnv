@@ -1,11 +1,11 @@
 {
   "name": "SAltEnv",
-  "version": "0.1.0",
-  "description": "SAltEnv - Simple Alternative Environment, a minimal setup for web development using web components, heresy ,sass and pika(simple and frameless and no transpilation and no bundling and yes ES modules)",
+  "version": "0.1.1",
+  "description": "SAltEnv - Simple Alternative Environment, a minimal setup for web development using web components, heresy ,sass and snowpack(simple and frameless and no transpilation and no bundling and yes ES modules)",
   "main": "index.js",
   "scripts": {
     "start": "npm run build-css & npm run format & es-dev-server --watch --open --host 127.0.0.1 --port 9000",
-    "postinstall": "npx @pika/web",
+    "postinstall": "npx snowpack",
     "lint": "eslint \"src/**/*.{js}\" --quiet",
     "format": "prettier --write \"src/**/*.{js,scss,html}\"",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,7 +13,7 @@
   },
   "keywords": [
     "webcomponents",
-    "pika",
+    "snowpack",
     "heresy",
     "lighterHTML",
     "frameless"
@@ -22,16 +22,16 @@
   "license": "ISC",
   "dependencies": {
     "classnames-es": "^2.2.6",
-    "heresy": "^0.24.2",
-    "lighterhtml": "^2.0.8"
+    "heresy": "^0.24.4",
+    "lighterhtml": "^2.0.9"
   },
   "devDependencies": {
-    "@pika/web": "^0.6.1",
+    "snowpack": "^1.1.2",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-import": "^2.18.2",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "prettier": "^1.18.2",
-    "es-dev-server": "^1.23.1"
+    "es-dev-server": "^1.36.4"
   }
 }
