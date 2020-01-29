@@ -5,7 +5,7 @@ A minimal setup for web development using [web components](https://www.webcompon
 Note: heresy and sass are my personal preferences, you can replace them with your choice(lit-html or another).
 
 ## Why?:
-You might not really need webpack bundling or babel transpile or all those other steps. If you are on some traditional frontend stack/setup redo-ing all that stuff in React or Angular or Vue echo system might not be the right thing. It might be extremely costly and painful too. You may be already taking care of all those and more(like routing, session management) in your current django,, php and/or mvc framework, spring/java(God forbid JCR/@EM). All that is in production(i.e. battle tested) and you surely would move to Http2, be InternetExplorer-free and hopefully embrace ES-modules downline. You surely don't need/want two seperate dev-environments, constantly pluging some bundle.js or main.js into your current system. So, Why not? 
+You might not really need webpack bundling or babel transpile or all those other steps. If you are on some traditional frontend stack/setup redo-ing all that stuff in React or Angular or Vue echo system might not be the right thing. It might be extremely costly and painful too. You may be already taking care of all those and more(like routing, session management) in your current django,, php and/or mvc framework, spring/java(God forbid JCR/@EM). All that is in production(i.e. battle tested) and you surely would move to Http2, be InternetExplorer-free and hopefully embrace ES-modules down the line. You surely don't need/want two seperate dev-environments, constantly pluging some bundle.js or main.js into your current system. So, Why not? 
 
 ### Why heresy?
 The post, [Why I don't use web components](https://dev.to/richharris/why-i-don-t-use-web-components-2cia) raises some real concerns about the state of custom webcomponents. I think [heresy](https://github.com/WebReflection/heresy)  does answer those concerns and perhaps in better ways than other solutions(like it's handling of CSS).
@@ -33,7 +33,7 @@ You will need to change "scripts"->"postinstall" based on where you want to save
 And also may like use [Terser](https://github.com/terser/terser) & [CSSNano](https://cssnano.co/) for optimizations before Production. 
 
 Note: 
-- you really don't need to run or have "es-dev-server" unless for running some statics in isolation in development/test. Just doing "npm run build-css & npm run format ...." based on your project needs might suffice. 
+- you really don't need to run or have "es-dev-server" unless for running some static files in isolation in development/test of some component. Your may use existing stack's server, Just doing "npm run build-css & npm run format ...." based on your project needs might suffice. 
 - As suggested by [heresy](https://github.com/WebReflection/heresy), for wider compatiblity(and safari) add this for polyfill
 ```
 <script>if(this.customElements)try{customElements.define('built-in',document.createElement('p').constructor,{'extends':'p'})}catch(a){document.write('<script src="//unpkg.com/@ungap/custom-elements-builtin"><'+'/script>')}else document.write('<script src="//unpkg.com/document-register-element"><'+'/script>');</script>
