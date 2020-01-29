@@ -1,11 +1,11 @@
 # SAltEnv -Simple Alternative Environment
 ## What?:
-A minimal setup for web development using [web components](https://www.webcomponents.org/introduction), [heresy](https://github.com/WebReflection/heresy) ,sass and [@pika/web](https://github.com/pikapkg/web) (simple and frameless and no transpilation and no bundling and no IE and yes ES modules)
+A minimal setup for web development using [web components](https://www.webcomponents.org/introduction), [heresy](https://github.com/WebReflection/heresy) ,sass and [snowpack](https://github.com/pikapkg/snowpack) (simple and framework-less and no transpilation and no bundling and no IE and yes ES modules)
 
-Note: heresy and sass are my personal preferences, you can replace them with yours.
+Note: heresy and sass are my personal preferences, you can replace them with your choice(lit-html or another).
 
 ## Why?:
-You might not really need webpack bundling or babel transpile or all those other steps. If you are on some traditional frontend stack/setup redo-ing all that stuff in React or Angular or Vue echo system might not be the right thing. It might be extremely costly and painful too. You may be already taking care of all those and more(like routing, session management) in your current django, spring/java(God forbid JCR/@EM), php and/or mvc framework. All that is production(i.e. battle) tested and you sure would move to Http2, be InternetExplorer-free and hopefully embrace ES-modules. You surely don't need two seperate dev-environments, constantly pluging some bundle.js or main.js into your current system.  So, Why not? 
+You might not really need webpack bundling or babel transpile or all those other steps. If you are on some traditional frontend stack/setup redo-ing all that stuff in React or Angular or Vue echo system might not be the right thing. It might be extremely costly and painful too. You may be already taking care of all those and more(like routing, session management) in your current django,, php and/or mvc framework, spring/java(God forbid JCR/@EM). All that is production(i.e. battle tested) and you surely would move to Http2, be InternetExplorer-free and hopefully embrace ES-modules downline. You surely don't need/want two seperate dev-environments, constantly pluging some bundle.js or main.js into your current system.  So, Why not? 
 
 ### Why heresy?
 The post, [Why I don't use web components](https://dev.to/richharris/why-i-don-t-use-web-components-2cia) raises some real concerns about the state of custom webcomponents. I think [heresy](https://github.com/WebReflection/heresy)  does answer those concerns and perhaps in better ways than other solutions(like it's handling of CSS).
@@ -29,6 +29,8 @@ Like in "django" you might changes this package.json->"scripts" to somthing like
   }
   ```
 You will need to change "scripts"->"postinstall" based on where you want to save webmodules(compiled yes-modules). You can then import those modules into your component's django templates, statitc js files or other js compomonents.
+
+And also may like use [Terser](https://github.com/terser/terser) & [CSSNano](https://cssnano.co/) for optimization before Production. 
 
 Note: 
 - you really don't need to run or have "es-dev-server" unless for running some statics in isolation in development/test. Just doing "npm run build-css & npm run format ...." based on your project needs might suffice. 
