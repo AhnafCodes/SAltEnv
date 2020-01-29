@@ -17,7 +17,7 @@ Like in "django" you might changes this package.json->"scripts" to somthing like
 ```
 "scripts": {
     "start": "npm run build-css & es-dev-server --watch --open --host 127.0.0.1 --port 3000",
-    "postinstall": "npx @pika/web --dest ./com/static/webmodules",
+    "postinstall": "npx snowpack --dest ./com/static/webmodules",
     "lint": "eslint --ext. js --quiet",
     "format": "prettier \"./**/*.{js,scss,html}\" --write",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -34,7 +34,7 @@ And also may like use [Terser](https://github.com/terser/terser) & [CSSNano](htt
 
 Note: 
 - you really don't need to run or have "es-dev-server" unless for running some statics in isolation in development/test. Just doing "npm run build-css & npm run format ...." based on your project needs might suffice. 
-- As suggested by [heresy](https://github.com/WebReflection/heresy), for wider compatiblity add this for polyfill
+- As suggested by [heresy](https://github.com/WebReflection/heresy), for wider compatiblity(and safari) add this for polyfill
 ```
 <script>if(this.customElements)try{customElements.define('built-in',document.createElement('p').constructor,{'extends':'p'})}catch(a){document.write('<script src="//unpkg.com/@ungap/custom-elements-builtin"><'+'/script>')}else document.write('<script src="//unpkg.com/document-register-element"><'+'/script>');</script>
 ```
