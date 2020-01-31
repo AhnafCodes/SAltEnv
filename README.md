@@ -1,6 +1,6 @@
 # SAltEnv -Simple Alternative Environment
 ## What?:
-A minimal setup for web development using [web components](https://www.webcomponents.org/introduction), [heresy](https://github.com/WebReflection/heresy) ,sass and [snowpack](https://github.com/pikapkg/snowpack) (simple and framework-less and no transpilation and no bundling and no IE and yes ES modules)
+A minimal setup for web development using [web components](https://www.webcomponents.org/introduction), [heresy](https://github.com/WebReflection/heresy) ,sass and [snowpack](https://github.com/pikapkg/snowpack)(simple and framework-less and no transpilation and no bundling and no IE and yes ES modules)
 
 Note: heresy and sass are my personal preferences, you can replace them with your choice(lit-html or another).
 
@@ -8,12 +8,12 @@ Note: heresy and sass are my personal preferences, you can replace them with you
 You might not really need webpack bundling or babel transpile or all those other steps. If you are on some traditional frontend stack/setup redo-ing all that stuff in React or Angular or Vue echo system might not be the right thing. It might be extremely costly and painful too. You may be already taking care of all those and more(like routing, session management) in your current django,, php and/or mvc framework, spring/java(God forbid JCR/@EM). All that is in production(i.e. battle tested) and you surely would move to Http2, be InternetExplorer-free and hopefully embrace ES-modules down the line. You surely don't need/want two seperate dev-environments, constantly pluging some bundle.js or main.js into your current system. So, Why not? 
 
 ### Why heresy?
-The post, [Why I don't use web components](https://dev.to/richharris/why-i-don-t-use-web-components-2cia) raises some real concerns about the state of custom webcomponents. I think [heresy](https://github.com/WebReflection/heresy)  does answer those concerns and perhaps in better ways than other solutions(like it's handling of CSS).
+The post, [Why I don't use web components](https://dev.to/richharris/why-i-don-t-use-web-components-2cia) raises some real concerns about the state of custom webcomponents. I think [heresy](https://github.com/WebReflection/heresy) does answer those concerns and perhaps in better ways than other solutions(like it's approach to CSS).
 
 ## How?:
-You will have to make changes to package.json based on your current project and frameworks directory structure and scaffolding 
+You will be using npm and have to make changes to "package.json" based on your current project or frameworks directory structure and scaffolding 
 
-Like in "django" you might changes this package.json->"scripts" to somthing like: 
+Like in "django" you might change the package.json->"scripts" to somthing like: 
 ```
 "scripts": {
     "start": "npm run build-css & es-dev-server --watch --open --host 127.0.0.1 --port 3000",
