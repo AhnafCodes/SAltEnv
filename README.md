@@ -13,7 +13,7 @@ The post, [Why I don't use web components](https://dev.to/richharris/why-i-don-t
 ## How?:
 You will be using npm and have to make changes to "package.json" based on your current project or frameworks directory structure and scaffolding 
 
-Like in "django" you might change the package.json->"scripts" to somthing like: 
+Like in "django" you might change the package.json->"scripts" to something like: 
 ```
 "scripts": {
     "start": "npm run build-css & es-dev-server --watch --open --host 127.0.0.1 --port 3000",
@@ -30,7 +30,7 @@ Like in "django" you might change the package.json->"scripts" to somthing like:
   ```
 You will need to change "scripts"->"postinstall" based on where you want to save webmodules(compiled yes-modules). You can then import those modules into your component's django templates, statitc js files or other js compomonents.
 
-And also may like use [Terser](https://github.com/terser/terser) & [CSSNano](https://cssnano.co/) for optimizations before Production. 
+And also may like use [Terser](https://github.com/terser/terser) & [CSSNano](https://cssnano.co/) for optimizations(like combine or minify files) before Production. 
 
 Note: 
 - you really don't need to run or have "es-dev-server" unless for running some static files in isolation in development/test of some component. Your may use existing stack's server, Just doing "npm run build-css & npm run format ...." based on your project needs might suffice. 
