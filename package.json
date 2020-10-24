@@ -22,16 +22,16 @@
   "license": "ISC",
   "dependencies": {
     "classnames-es": "^2.2.6",
-    "heresy": "^0.24.4",
-    "lighterhtml": "^2.0.9"
+    "heresy": "^1.0.2",
+    "lighterhtml": "^4.1.1"
   },
   "devDependencies": {
-    "snowpack": "^1.2.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-import": "^2.20.1",
-    "node-sass": "^4.13.1",
-    "prettier": "^1.19.1",
-    "es-dev-server": "^1.40.0"
+    "snowpack": "^1.7.1",
+    "eslint": "^7.12.0",
+    "eslint-config-prettier": "^6.14.0",
+    "eslint-plugin-import": "^2.22.1",
+    "node-sass": "^4.14.1",
+    "prettier": "^2.1.2",
+    "es-dev-server": "^1.57.8"
   }
 }

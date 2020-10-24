@@ -4,6 +4,6 @@ export const Greet = {
   extends: "div", // will extends li constructor
   render() {
     this.html`Hi  ${this.props.name}`;
-  }
+  },
 };
 define(Greet);

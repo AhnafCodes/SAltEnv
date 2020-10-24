@@ -5,18 +5,18 @@ const getNextAllowedColors = {
   red: {
     red: false,
     green: true,
-    yellow: true
+    yellow: true,
   },
   yellow: {
     red: true,
     green: true,
-    yellow: false
+    yellow: false,
   },
   green: {
     red: true,
     green: false,
-    yellow: true
-  }
+    yellow: true,
+  },
 };
 
 class ControlledPlayground extends HTMLDivElement {
@@ -36,11 +36,11 @@ class ControlledPlayground extends HTMLDivElement {
       //this part can go in set props if you are deducing state from props
       const initialState = {
         controlsState: { red: true, yellow: true, green: false },
-        play: "green"
+        play: "green",
       };
       addState(initialState, this);
     }
-    this.addEventListener("click", e => {
+    this.addEventListener("click", (e) => {
       const target = e.target;
       if (
         target &&
@@ -50,11 +50,11 @@ class ControlledPlayground extends HTMLDivElement {
         changeColor(target.className);
       }
     });
-    const changeColor = color => {
+    const changeColor = (color) => {
       const controlsState = getNextAllowedColors[color];
       this.setState({
         controlsState: controlsState,
-        play: color
+        play: color,
       });
     };
   }
@@ -69,11 +69,9 @@ class ControlledPlayground extends HTMLDivElement {
 
   renderControls() {
     const controlsState = this.getState().controlsState;
-    return Object.keys(controlsState).map(controlState =>
+    return Object.keys(controlsState).map((controlState) =>
       controlsState[controlState]
-        ? html`
-            <button class=${controlState}>${controlState}</button>
-          `
+        ? html` <button class=${controlState}>${controlState}</button> `
         : html``
     );
   }
@@ -91,9 +89,4 @@ class ControlledPlayground extends HTMLDivElement {
 
 define(ControlledPlayground);
 
-render(
-  document.getElementById("test"),
-  html`
-    <ControlledPlayground />
-  `
-);
+render(document.getElementById("test"), html` <ControlledPlayground /> `);
