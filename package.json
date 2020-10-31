@@ -9,7 +9,7 @@
     "lint": "eslint \"src/**/*.{js}\" --quiet",
     "format": "prettier --write \"src/**/*.{js,scss,html}\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "node-sass src -o src  -iw"
+    "build-css": "postcss src/css/tailwind.css -o src/css/styles.css"
   },
   "keywords": [
     "webcomponents",
@@ -23,15 +23,18 @@
   "dependencies": {
     "classnames-es": "^2.2.6",
     "heresy": "^1.0.2",
-    "lighterhtml": "^4.1.1"
+    "lighterhtml": "^4.1.1",
+    "neverland": "^4.2.1"
   },
   "devDependencies": {
-    "snowpack": "^1.7.1",
+    "autoprefixer": "^9.8.6",
+    "es-dev-server": "^1.57.8",
     "eslint": "^7.12.0",
     "eslint-config-prettier": "^6.14.0",
     "eslint-plugin-import": "^2.22.1",
-    "node-sass": "^4.14.1",
+    "postcss-cli": "^8.1.0",
     "prettier": "^2.1.2",
-    "es-dev-server": "^1.57.8"
+    "snowpack": "^1.7.1",
+    "tailwindcss": "^1.9.6"
   }
 }
