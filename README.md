@@ -1,8 +1,8 @@
 # SAltEnv -Simple Alternative Environment
 ## What?
-A minimal setup for web development using [web components](https://www.webcomponents.org/introduction), [heresy](https://github.com/WebReflection/heresy) ,sass and [snowpack](https://github.com/pikapkg/snowpack)(simple and framework-less and no transpilation and no bundling and no IE and yes ES modules)
+A minimal setup for web development using [web components](https://www.webcomponents.org/introduction), [neverland](https://github.com/WebReflection/neverland) ,sass/tailwind and [snowpack](https://github.com/pikapkg/snowpack)(simple and framework-less and no transpilation and no bundling and no IE and yes ES modules)
 
-Note: heresy and sass are my personal preferences, you can replace them with your choice(lit-html or another).
+Note: neverland/heresy and sass are my personal preferences, you can replace them with your choice(lit-html or another).
 
 ## Why?
 You might not really need webpack bundling or babel transpile or all those other steps. If you are on some traditional frontend/web stack redo-ing all that stuff in React or Angular or Vue echosystem might not be the right thing. It might be extremely costly and painful too. You may be already taking care of things like routing, session management in your current django, php and/or mvc framework, spring/java(or God forbid JCR/@EM) based workspace. All that is in production(i.e. battle tested) and you surely would move to Http2, be InternetExplorer-free and hopefully embrace ES-modules down the line. You surely don't need/want two seperate dev-environments, constantly pluging some bundle.js or main.js into your current system. So, Why not? 
